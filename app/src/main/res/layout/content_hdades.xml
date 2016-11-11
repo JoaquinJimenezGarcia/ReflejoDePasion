@@ -10,7 +10,7 @@
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.joaquinjimenezgarcia.reflejodepasion.Hdades"
+    tools:context="com.reflejodepasion.rdp.Hdades"
     tools:showIn="@layout/app_bar_hdades">
 
     <WebView

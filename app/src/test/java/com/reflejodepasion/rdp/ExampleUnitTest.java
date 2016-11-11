@@ -1,4 +1,4 @@
-package com.joaquinjimenezgarcia.reflejodepasion;
+package com.reflejodepasion.rdp;
 
 import org.junit.Test;
 
