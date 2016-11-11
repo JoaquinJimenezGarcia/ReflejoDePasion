@@ -17,21 +17,21 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class MainActivity extends AppCompatActivity
+public class Hdades extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_hdades);
 
-        WebView webView = (WebView) findViewById(R.id.webView);
+        WebView webView = (WebView) findViewById(R.id.webView2);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://138.68.164.217/rdp");
-        
+        webView.loadUrl("http://138.68.164.217/rdp/eventos.html");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.hdades, menu);
         return true;
     }
 
@@ -84,10 +84,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inicio) {
-            //Actual
+            Intent Inicio = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(Inicio);
         } else if (id == R.id.nav_hdades) {
-            Intent Hdades = new Intent(getApplicationContext(), Hdades.class);
-            startActivity(Hdades);
+            //Actual
         } else if (id == R.id.nav_eventos) {
 
         } else if (id == R.id.nav_twitter) {
