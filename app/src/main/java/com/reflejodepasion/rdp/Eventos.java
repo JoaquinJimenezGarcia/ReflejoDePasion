@@ -3,6 +3,9 @@ package com.reflejodepasion.rdp;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,23 +18,32 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class Hdades extends AppCompatActivity
+public class Eventos extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hdades);
+        setContentView(R.layout.activity_eventos);
 
-        WebView webView = (WebView) findViewById(R.id.webView2);
+        WebView webView = (WebView) findViewById(R.id.webView3);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://138.68.164.217/rdp/hdades.html");
+        webView.loadUrl("http://138.68.164.217/rdp/eventos.php");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -56,7 +68,7 @@ public class Hdades extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.hdades, menu);
+        getMenuInflater().inflate(R.menu.eventos, menu);
         return true;
     }
 
@@ -82,13 +94,13 @@ public class Hdades extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inicio) {
-            Intent Inicio = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(Inicio);
+            Intent MainActivity = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(MainActivity);
         } else if (id == R.id.nav_hdades) {
-            //Actual
+            Intent Hdades = new Intent(getApplicationContext(), Hdades.class);
+            startActivity(Hdades);
         } else if (id == R.id.nav_eventos) {
-            Intent Eventos = new Intent(getApplicationContext(), Eventos.class);
-            startActivity(Eventos);
+            //Actual
         } else if (id == R.id.nav_twitter) {
             Intent twitter = new Intent(Intent.ACTION_VIEW);
             twitter.setData(Uri.parse("https://twitter.com/ReflejodePasion"));

@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.reflejodepasion.rdp.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,8 +21,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.reflejodepasion.rdp.Hdades"
+            android:name=".Hdades"
             android:label="@string/title_activity_hdades"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Eventos"
+            android:label="@string/title_activity_eventos"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

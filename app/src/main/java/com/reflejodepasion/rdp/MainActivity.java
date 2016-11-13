@@ -1,6 +1,7 @@
 package com.reflejodepasion.rdp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -86,11 +87,16 @@ public class MainActivity extends AppCompatActivity
             Intent Hdades = new Intent(getApplicationContext(), Hdades.class);
             startActivity(Hdades);
         } else if (id == R.id.nav_eventos) {
-
+            Intent Eventos = new Intent(getApplicationContext(), Eventos.class);
+            startActivity(Eventos);
         } else if (id == R.id.nav_twitter) {
-
+            Intent twitter = new Intent(Intent.ACTION_VIEW);
+            twitter.setData(Uri.parse("https://twitter.com/ReflejodePasion"));
+            startActivity(twitter);
         } else if (id == R.id.nav_fb) {
-
+            Intent fb = new Intent(Intent.ACTION_VIEW);
+            fb.setData(Uri.parse("https://www.facebook.com/reflejo.pasion?fref=ts"));
+            startActivity(fb);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
